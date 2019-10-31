@@ -21,6 +21,7 @@ function addTask(text) {
       <span>${newTask.text}</span>
       <button class="list__task-button">
         <svg><use xlink:href="#cancel"></use></svg>
+        <i class="material-icons orange600">face</i>
       </button>
     </li>
   `);
