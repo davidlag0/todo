@@ -1,0 +1,56 @@
+html {
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+svg {
+  width: 25px;
+  height: 25px;
+  stroke: #2329D6;
+  stroke-width: 1;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  fill: none;
+  color: #2329D6;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  /*padding-left: 10px;
+  padding-right: 10px;
+  color: #333;
+  height: 90vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  overflow-y: auto;*/
+}
+
+.list__task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid red;
+}
+
+.list__task-label {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.list__task-button {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
