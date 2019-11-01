@@ -10,7 +10,7 @@ svg {
   width: 24px;
   height: 24px;
   stroke: #2329D6;
-  stroke-width: 1;
+  stroke-width: 2;
   stroke-linecap: square;
   stroke-linejoin: miter;
   fill: none;
@@ -39,6 +39,18 @@ body {
   align-items: center;
   justify-content: space-between;
   border: 2px solid red;
+}
+
+.list__task .checkmark {
+  opacity: 0;
+}
+
+.list__task.checked .checkmark {
+  opacity: 100;
+}
+
+.list__task.checked span {
+  text-decoration: line-through;
 }
 
 .list__task-label {

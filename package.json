@@ -1,0 +1,27 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Simple JavaScript TODO app",
+  "main": "task-list.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "htmlhint": "^0.11.0"
+  },
+  "scripts": {
+    "lint": "eslint '**/*.{js,jsx}' --quiet",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidlag0/todo.git"
+  },
+  "author": "David Laganière",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/davidlag0/todo/issues"
+  },
+  "homepage": "https://github.com/davidlag0/todo#readme"
+}
