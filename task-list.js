@@ -18,11 +18,11 @@ function addTask(text) {
     <li class="list__task-item" data-key="${newTask.id}">
       <input id="${newTask.id}" type="checkbox" />
       <label for="${newTask.id}" class="list__task-label">
-        <svg>
+        <svg class="list__task-checkbox">
           <!-- Seems to be an empty checkbox. -->
           <!-- <rect class="checkmark" x="21" y="3" width="18" height="18" rx="1" transform="rotate(90 21 3)" /> -->
-          <rect class="list__task-checkbox" width="18" height="18" x="3" y="3" />
-          <path class="list__task-checkmark" d="M6.66666 12.6667L9.99999 16L17.3333 8.66669" />
+          <rect class="list__task-box" width="18" height="18" x="3" y="3" />
+          <path class="list__task-checkmark" d="M6.66666 12.6667L9.99999 16L17.3333 8.66669" stroke-dasharray="16" stroke-dashoffset="16" />
         </svg>
       </label>
       <span class="list__task-text">${newTask.text}</span>
