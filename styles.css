@@ -34,22 +34,22 @@ body {
   overflow-y: auto;*/
 }
 
-.list__task {
+.list__task-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: 2px solid red;
 }
 
-.list__task .checkmark {
+.list__task-checkmark {
   opacity: 0;
 }
 
-.list__task.checked .checkmark {
+.list__task-checkmark_state_checked {
   opacity: 100;
 }
 
-.list__task.checked span {
+.list__task-text_style_crossed {
   text-decoration: line-through;
 }
 

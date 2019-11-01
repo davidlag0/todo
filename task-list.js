@@ -15,16 +15,17 @@ function addTask(text) {
   list.insertAdjacentHTML(
     'afterbegin',
     `
-    <li class="list__task" data-key="${newTask.id}">
+    <li class="list__task-item" data-key="${newTask.id}">
       <input id="${newTask.id}" type="checkbox" />
       <label for="${newTask.id}" class="list__task-label">
         <svg>
-          <rect class="checkmark" x="21" y="3" width="18" height="18" rx="1" transform="rotate(90 21 3)" />
-          <path class="checkmark" d="M6.66666 12.6667L9.99999 16L17.3333 8.66669" />
-          <rect class="checkbox" width="18" height="18" x="3" y="3" />
+          <!-- Seems to be an empty checkbox. -->
+          <!-- <rect class="checkmark" x="21" y="3" width="18" height="18" rx="1" transform="rotate(90 21 3)" /> -->
+          <rect class="list__task-checkbox" width="18" height="18" x="3" y="3" />
+          <path class="list__task-checkmark" d="M6.66666 12.6667L9.99999 16L17.3333 8.66669" />
         </svg>
       </label>
-      <span>${newTask.text}</span>
+      <span class="list__task-text">${newTask.text}</span>
       <button class="list__task-button">
         <svg>
           <path d="M15.5355339 15.5355339L8.46446609 8.46446609M15.5355339 8.46446609L8.46446609 15.5355339" />
@@ -42,11 +43,15 @@ function toggleChecked(key) {
   const taskIndex = tasks.findIndex((task) => task.id === Number(key));
   tasks[taskIndex].checked = !tasks[taskIndex].checked;
 
-  const task = document.querySelector(`[data-key='${key}']`);
+  const taskItem = document.querySelector(`[data-key='${key}']`);
+  const taskCheckmark = taskItem.querySelector('.list__task-checkmark');
+  const taskText = taskItem.querySelector('.list__task-text');
   if (tasks[taskIndex].checked) {
-    task.classList.add('checked');
+    taskCheckmark.classList.add('list__task-checkmark_state_checked');
+    taskText.classList.add('list__task-text_style_crossed');
   } else {
-    task.classList.remove('checked');
+    taskCheckmark.classList.remove('list__task-checkmark_state_checked');
+    taskText.classList.remove('list__task-text_style_crossed');
   }
 }
 
