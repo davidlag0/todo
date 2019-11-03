@@ -1,0 +1,5 @@
+@import url('_crossed/list__task-text_crossed.css');
+
+.list__task-text {
+    align-items: left;
+}

@@ -1,0 +1,5 @@
+@import url('_checked/list__task-checkmark_checked.css');
+
+.list__task-checkmark {
+    transition: stroke-dashoffset 0.1s linear;
+}

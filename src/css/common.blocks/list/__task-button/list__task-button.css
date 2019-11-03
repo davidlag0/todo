@@ -1,0 +1,11 @@
+.list__task-button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.list__task-button svg {
+    pointer-events: none;
+}
