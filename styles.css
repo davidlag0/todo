@@ -1,5 +1,24 @@
+:root {
+  --primary-color: #1da2f1;
+  --background-color: #ffffff;
+  --border-radius: 3px;
+}
+
 html {
   box-sizing: border-box;
+
+  background-image: url(raindrops2.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+
+  /* To show while the background is loading */
+  background-color: #ffffff;
+}
+
+* {
+  box-sizing: inherit;
 }
 
 input[type="checkbox"] {
@@ -9,12 +28,12 @@ input[type="checkbox"] {
 svg {
   width: 24px;
   height: 24px;
-  stroke: #2329D6;
+  stroke: var(--primary-color);
   stroke-width: 2;
   stroke-linecap: square;
   stroke-linejoin: miter;
   fill: none;
-  color: #2329D6;
+  color: var(--primary-color);
 }
 
 body {
@@ -35,11 +54,53 @@ body {
   overflow-y: auto;*/
 }
 
+.title {
+  color: var(--background-color);
+  background-color: var(--primary-color);
+  padding: 0.1em 0.5em 0.1em 0.5em;
+  width: auto;
+  display: inline-block;
+  border-radius: var(--border-radius);
+}
+
+.task-form__input {
+  display: inline-block;
+  color: var(--background-color);
+  background-color: var(--primary-color);
+  width: 100%;
+  border-radius: var(--border-radius);
+  padding: 15px 10px 15px 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.task-form__input::placeholder {
+  color: var(--background-color);
+}
+
+.list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.list:empty {
+  display: none;
+}
+
 .list__task-item {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid red;
+  border-radius: var(--border-radius);
+  padding: 8px 10px 8px 10px;
+  background-color: var(--background-color);
+  color: #000000;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 3px 0 3px 0;
 }
 
 .list__task-checkmark {
@@ -48,6 +109,10 @@ body {
 
 .list__task-checkmark_state_checked {
   stroke-dashoffset: 0;
+}
+
+.list__task-text {
+  align-items: left;
 }
 
 .list__task-text_style_crossed {
@@ -66,8 +131,39 @@ body {
   background-color: transparent;
   outline: none;
   cursor: pointer;
+  padding: 0;
 }
 
-.material-icons.orange600 {
-  color: #FB8C00;
+.list__task-button svg {
+  pointer-events: none;
+}
+
+.empty-state {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+  padding-bottom: 1px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.empty-state svg {
+  width: 120px;
+  height: 120px;
+  stroke: var(--primary-color);
+  stroke-width: 0.4;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  fill: none;
+  color: var(--primary-color);
+}
+
+.empty-state__title, .empty-state__description {
+  color: var(--primary-color);
+}
+
+.list:empty + .empty-state {
+  display: flex;
 }

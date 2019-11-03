@@ -1,4 +1,4 @@
-const tasks = [];
+let tasks = [];
 
 // Function to add a task in the task list.
 function addTask(text) {
@@ -32,18 +32,17 @@ function addTask(text) {
           <path
             d="M4.92893219,19.0710678 C1.02368927,15.1658249 1.02368927,8.83417511 4.92893219,4.92893219 C8.83417511,1.02368927 15.1658249,1.02368927 19.0710678,4.92893219 C22.9763107,8.83417511 22.9763107,15.1658249 19.0710678,19.0710678 C15.1658249,22.9763107 8.83417511,22.9763107 4.92893219,19.0710678 Z" />
         </svg>
-        <i class="material-icons orange600">face</i>
       </button>
     </li>
   `,
   );
 }
 
-function toggleChecked(key) {
-  const taskIndex = tasks.findIndex((task) => task.id === Number(key));
+function toggleChecked(taskItemDataKey) {
+  const taskIndex = tasks.findIndex((task) => task.id === Number(taskItemDataKey));
   tasks[taskIndex].checked = !tasks[taskIndex].checked;
 
-  const taskItem = document.querySelector(`[data-key='${key}']`);
+  const taskItem = document.querySelector(`[data-key='${taskItemDataKey}']`);
   const taskCheckmark = taskItem.querySelector('.list__task-checkmark');
   const taskText = taskItem.querySelector('.list__task-text');
   if (tasks[taskIndex].checked) {
@@ -53,6 +52,19 @@ function toggleChecked(key) {
     taskCheckmark.classList.remove('list__task-checkmark_state_checked');
     taskText.classList.remove('list__task-text_style_crossed');
   }
+}
+
+function deleteTask(taskItemDataKey) {
+  // Keep all existing items in the list except the one we want to delete.
+  tasks = tasks.filter((task) => task.id !== Number(taskItemDataKey));
+
+  const taskToDelete = document.querySelector(`[data-key='${taskItemDataKey}']`);
+  taskToDelete.remove();
+
+  // To remove all HTML content of the list to avoid a bug with CSS
+  // and the empty state of the list.
+  const taskList = document.querySelector('.list');
+  if (tasks.length === 0) taskList.innerHTML = '';
 }
 
 const form = document.querySelector('.task-form');
@@ -74,5 +86,10 @@ list.addEventListener('click', (event) => {
   if (event.target.type === 'checkbox') {
     const taskKey = event.target.parentElement.dataset.key;
     toggleChecked(taskKey);
+  }
+
+  if (event.target.classList.contains('list__task-button')) {
+    const taskKey = event.target.parentElement.dataset.key;
+    deleteTask(taskKey);
   }
 });

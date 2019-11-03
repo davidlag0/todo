@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>JavaScript TODO App</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <!-- <link rel="manifest" href="/site.webmanifest"> -->
@@ -21,10 +20,24 @@
       <h1 class="title">Tasks List</h1>
 
       <form class="task-form">
-        <input type="text" aria-label="Enter a new task" placeholder="E.g: build a spaceship" class="task-form__input">
+        <input type="text" aria-label="Enter a new task" placeholder="Add a task..." class="task-form__input">
       </form>
 
       <ul class="list"></ul>
+
+      <div class="empty-state">
+        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          aria-labelledby="tasklistIconTitle">
+          <title id="tasklistIconTitle">Task List</title>
+          <rect width="20" height="20" x="2" y="2"></rect>
+          <path d="M11 7L17 7M11 12L17 12M11 17L17 17"></path>
+          <line x1="7" y1="7" x2="7" y2="7"></line>
+          <line x1="7" y1="12" x2="7" y2="12"></line>
+          <line x1="7" y1="17" x2="7" y2="17"></line>
+        </svg>
+        <h2 class="empty-state__title">Add your first task</h2>
+        <p class="empty-state__description">What will you work on today?</p>
+      </div>
     </div>
   </main>
   <script src="task-list.js"></script>
