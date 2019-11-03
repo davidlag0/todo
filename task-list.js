@@ -46,11 +46,11 @@ function toggleChecked(taskItemDataKey) {
   const taskCheckmark = taskItem.querySelector('.list__task-checkmark');
   const taskText = taskItem.querySelector('.list__task-text');
   if (tasks[taskIndex].checked) {
-    taskCheckmark.classList.add('list__task-checkmark_state_checked');
-    taskText.classList.add('list__task-text_style_crossed');
+    taskCheckmark.classList.add('list__task-checkmark_checked');
+    taskText.classList.add('list__task-text_crossed');
   } else {
-    taskCheckmark.classList.remove('list__task-checkmark_state_checked');
-    taskText.classList.remove('list__task-text_style_crossed');
+    taskCheckmark.classList.remove('list__task-checkmark_checked');
+    taskText.classList.remove('list__task-text_crossed');
   }
 }
 

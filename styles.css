@@ -107,7 +107,7 @@ body {
   transition: stroke-dashoffset 0.1s linear;
 }
 
-.list__task-checkmark_state_checked {
+.list__task-checkmark_checked {
   stroke-dashoffset: 0;
 }
 
@@ -115,7 +115,7 @@ body {
   align-items: left;
 }
 
-.list__task-text_style_crossed {
+.list__task-text_crossed {
   text-decoration: line-through;
 }
 
