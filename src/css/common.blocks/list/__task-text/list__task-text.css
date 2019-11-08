@@ -4,4 +4,6 @@
     /* align-items: left; */
     width: 100%;
     padding-left: 7px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
