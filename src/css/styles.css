@@ -35,9 +35,9 @@ svg {
 }
 
 body {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
 
-  background-image: url(../assets/images/raindrops2.jpg);
+  background-image: url(../assets/images/raindrops2-tinyjpg.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
