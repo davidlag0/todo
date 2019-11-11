@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
   entry: [
@@ -50,6 +51,23 @@ module.exports = {
       // hash: true,
       template: './src/html/index.html',
       filename: 'index.html',
+    }),
+    new FaviconsWebpackPlugin({
+      logo: './src/assets/logo/javascript.svg',
+      prefix: 'assets/',
+      inject: 'force',
+      favicons: {
+        icons: {
+          android: false,
+          appleIcon: false,
+          appleStartup: false,
+          coast: false,
+          favicons: true,
+          firefox: false,
+          windows: false,
+          yandex: false,
+        },
+      },
     }),
   ],
 };
