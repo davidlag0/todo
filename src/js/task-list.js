@@ -1,3 +1,5 @@
+import '../css/styles.css';
+
 let tasks = [];
 
 // Function to add a task in the task list.
