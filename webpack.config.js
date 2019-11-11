@@ -55,6 +55,7 @@ module.exports = {
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
+        removeAttributeQuotes: true,
       },
       // hash: true,
       template: './src/html/index.html',
