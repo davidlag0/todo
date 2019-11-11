@@ -48,6 +48,14 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      },
       // hash: true,
       template: './src/html/index.html',
       filename: 'index.html',
