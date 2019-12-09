@@ -1,4 +1,5 @@
 import '../css/styles.css';
+import taskItemTemplate from './task-item/task-item.template';
 
 let tasks = [];
 
@@ -16,6 +17,8 @@ function addTask(text) {
 
   list.insertAdjacentHTML(
     'afterbegin',
+    taskItemTemplate(newTask),
+    /*
     `
     <li class="list__task-item" data-key="${newTask.id}">
       <input id="${newTask.id}" type="checkbox" />
@@ -37,6 +40,7 @@ function addTask(text) {
       </button>
     </li>
   `,
+  */
   );
 }
 
