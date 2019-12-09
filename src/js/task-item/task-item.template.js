@@ -20,4 +20,4 @@ const taskItemTemplate = (newTask) => `
     </li>
 `;
 
-export default { taskItemTemplate };
+export default taskItemTemplate;
