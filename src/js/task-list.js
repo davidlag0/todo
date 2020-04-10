@@ -2,6 +2,9 @@ import '../css/styles.css';
 import taskItemTemplate from './task-item/task-item.template';
 import TaskListComponent from './task-list/task-list.component';
 
+/* Web Component */
+import TodoList from '../components/task-list';
+
 let tasks = [];
 
 // Function to add a task in the task list.
