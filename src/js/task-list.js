@@ -1,5 +1,6 @@
 import '../css/styles.css';
 import taskItemTemplate from './task-item/task-item.template';
+import TaskListComponent from './task-list/task-list.component';
 
 let tasks = [];
 
@@ -63,7 +64,7 @@ form.addEventListener('submit', (event) => {
     input.value = '';
   }
 });
-
+/*
 const list = document.querySelector('.list');
 list.addEventListener('click', (event) => {
   if (event.target.type === 'checkbox') {
@@ -76,3 +77,12 @@ list.addEventListener('click', (event) => {
     deleteTask(taskKey);
   }
 });
+*/
+
+function render(model) {
+  const appElement = document.querySelector('#app');
+  appElement.innerHTML = TaskListComponent.render(model);
+  TaskListComponent.afterRender(model);
+}
+
+render({ tasks });
