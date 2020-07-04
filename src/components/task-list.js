@@ -30,31 +30,66 @@ class TodoList extends HTMLElement {
   constructor() {
     super();
 
-    // Add a shadow DOM
-    const shadowDOM = this.attachShadow({ mode: 'open' });
+    this.tasks = [];
 
-    // render
+    const shadowDOM = this.attachShadow({ mode: 'open' });
     shadowDOM.appendChild(template.content.cloneNode(true));
 
     // method binding
-    this.addItem = this.addItem.bind(this);
+    // TODO: Understand what this is for.
+    // this.addItem = this.addItem.bind(this);
+    this.addTask = this.addTask.bind(this);
   }
 
   connectedCallback() {
-    const button = this.shadowRoot.querySelector('button');
-    button.onclick = this.addItem;
+    const form = this.shadowRoot.querySelector('.task-form');
+    form.addEventListener('submit', this.formCallback);
   }
 
-  addItem() {
-    const input = this.shadowRoot.querySelector('#new-item');
-    const item = document.createElement('list-item');
+  // addItem() {
+  //   const input = this.shadowRoot.querySelector('#new-item');
+  //   const item = document.createElement('list-item');
 
-    item.innerHTML = input.value;
+  //   item.innerHTML = input.value;
 
-    this.appendChild(item);
+  //   this.appendChild(item);
+  // }
+
+  // Function to prepare the addition of a task after clicking
+  // on the button to add a task.
+  formCallback(event) {
+    // To avoid the default form behavior of sending the content to the web server.
+    event.preventDefault();
+
+    const input = this.querySelector('.task-form__input');
+
+    const text = input.value.trim();
+    if (text !== '') {
+      this.parentNode.host.addTask(text);
+      input.value = '';
+    }
+  }
+
+  // Function to add a task in the task list.
+  addTask(text) {
+    const newTask = {
+      text,
+      checked: false,
+      id: Date.now(),
+    };
+
+    this.tasks.push(newTask);
+
+    const list = this.shadowRoot.querySelector('.list');
+
+    // list.insertAdjacentHTML(
+    //   'afterbegin',
+    //   taskItemTemplate(newTask),
+    // );
+    console.log(this.tasks);
   }
 }
 
 export default TodoList;
 
-customElements.define('todo-list', TodoList);
+customElements.define('task-list', TodoList);
