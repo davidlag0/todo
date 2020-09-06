@@ -6,12 +6,12 @@
   "dependencies": {},
   "devDependencies": {
     "doiuse": "^4.2.0",
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
-    "htmlhint": "^0.11.0"
+    "gulp-sass": "^4.1.0",
+    "htmlhint": "^0.14.1"
   },
   "scripts": {
     "lint": "eslint '**/*.{js,jsx}' --quiet",
