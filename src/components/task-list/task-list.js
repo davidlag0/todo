@@ -60,19 +60,21 @@ template.innerHTML = /* html */ `
 
   <ul>
     <slot>
-      <div class="empty-state">
-        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          aria-labelledby="tasklistIconTitle">
-          <title id="tasklistIconTitle">Task List</title>
-          <rect width="20" height="20" x="2" y="2"></rect>
-          <path d="M11 7L17 7M11 12L17 12M11 17L17 17"></path>
-          <line x1="7" y1="7" x2="7" y2="7"></line>
-          <line x1="7" y1="12" x2="7" y2="12"></line>
-          <line x1="7" y1="17" x2="7" y2="17"></line>
-        </svg>
-        <h2 class="empty-state__title">Add your first task</h2>
-        <p class="empty-state__description">What will you work on today?</p>
-      </div>
+      <li>
+        <div class="empty-state">
+          <svg role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            aria-labelledby="tasklistIconTitle">
+            <title id="tasklistIconTitle">Task List</title>
+            <rect width="20" height="20" x="2" y="2"></rect>
+            <path d="M11 7L17 7M11 12L17 12M11 17L17 17"></path>
+            <line x1="7" y1="7" x2="7" y2="7"></line>
+            <line x1="7" y1="12" x2="7" y2="12"></line>
+            <line x1="7" y1="17" x2="7" y2="17"></line>
+          </svg>
+          <h2 class="empty-state__title">Add your first task</h2>
+          <p class="empty-state__description">What will you work on today?</p>
+        </div>
+      </li>
     </slot>
   </ul>
 `;
