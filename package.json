@@ -5,12 +5,14 @@
   "main": "task-list.js",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.3.0",
     "doiuse": "^4.2.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-import": "^2.22.0",
     "favicons-webpack-plugin": "^4.2.0",
     "file-loader": "^6.1.0",
@@ -28,7 +30,7 @@
   },
   "scripts": {
     "lint": "eslint '**/*.{js,jsx}' --quiet",
-    "test": "jest",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage --collectCoverageFrom='src/**/{!(app.js),}.js'",
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
   },
