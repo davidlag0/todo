@@ -133,7 +133,7 @@ class TaskItem extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     if (newValue !== null) {
       this.taskText.classList.add("list__task-text_crossed");
-      this.taskCheckmark.classList.remove("list__task-checkmark_checked");
+      this.taskCheckmark.classList.add("list__task-checkmark_checked");
     } else {
       this.taskText.classList.remove("list__task-text_crossed");
       this.taskCheckmark.classList.remove("list__task-checkmark_checked");
