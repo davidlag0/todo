@@ -29,8 +29,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "lint": "eslint '**/*.{js,jsx}' --quiet",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage --collectCoverageFrom='src/**/{!(app.js),}.js'",
+    "test": "jest --coverage --collectCoverageFrom='src/**/{!(app.js),}.js'",
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
   },
