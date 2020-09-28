@@ -47,7 +47,7 @@ module.exports = {
       chunkFilename: '[id].css',
     }),
     new HtmlWebpackPlugin({
-      inject: false,
+      inject: true,
       minify: {
         collapseWhitespace: true,
         removeComments: true,
@@ -64,7 +64,7 @@ module.exports = {
     new FaviconsWebpackPlugin({
       logo: './src/assets/logo/javascript.svg',
       prefix: 'assets/',
-      inject: 'force',
+      inject: 'true',
       favicons: {
         icons: {
           android: false,
