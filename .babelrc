@@ -1,0 +1,4 @@
+// Only used to transpose ES6 code to ES5 for Jest
+{
+  "presets": ["@babel/preset-env"]
+}

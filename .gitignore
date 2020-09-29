@@ -6,3 +6,7 @@
 *.code-workspace
 node_modules
 npm-debug.log
+dist/
+coverage/
+.DS_Store
+**/.DS_Store
