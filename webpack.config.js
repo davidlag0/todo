@@ -1,18 +1,16 @@
-const TerserJSPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const TerserJSPlugin = require("terser-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
-  entry: [
-    './src/js/app.js',
-  ],
+  entry: ["./src/js/app.js"],
   output: {
     path: `${__dirname}/dist`,
-    publicPath: '/',
-    filename: 'bundle.js',
+    publicPath: "/",
+    filename: "bundle.js",
   },
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
@@ -30,21 +28,19 @@ module.exports = {
       }, */
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader',
-        ],
+        use: ["file-loader"],
       },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
-      chunkFilename: '[id].css',
+      filename: "styles.css",
+      chunkFilename: "[id].css",
     }),
     new HtmlWebpackPlugin({
       inject: true,
@@ -58,13 +54,13 @@ module.exports = {
         removeAttributeQuotes: true,
       },
       // hash: true,
-      template: './src/html/index.html',
-      filename: 'index.html',
+      template: "./src/html/index.html",
+      filename: "index.html",
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/assets/logo/javascript.svg',
-      prefix: 'assets/',
-      inject: 'true',
+      logo: "./src/assets/logo/javascript.svg",
+      prefix: "assets/",
+      inject: "true",
       favicons: {
         icons: {
           android: false,
