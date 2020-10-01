@@ -25,7 +25,7 @@ body {
 
 body.visible {
   /* To be able to lazy load the heavy background image */
-  background-image: url(../assets/images/raindrops2.jpg);
+  background-image: url(../assets/images/raindrops2.webp);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;

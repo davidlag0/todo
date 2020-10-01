@@ -4,6 +4,9 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+// const ImageminWebP = require('imagemin-webp');
+// const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: ["./src/js/app.js"],
@@ -31,7 +34,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|webp)$/,
         use: ["file-loader"],
       },
     ],
