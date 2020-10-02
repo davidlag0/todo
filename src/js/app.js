@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 
 // Styles related to the app itself
-import styles from "../css/styles.css";
+import "../css/styles.css";
 
 /* Web Component */
-import TaskList from "../components/task-list/task-list";
+import "../components/task-list/task-list";
 
 // eslint-disable-next-line func-names
 document.addEventListener("DOMContentLoaded", function () {
