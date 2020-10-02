@@ -1,5 +1,5 @@
 const TerserJSPlugin = require("terser-webpack-plugin");
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -22,7 +22,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(png|svg|jpg|gif|webp)$/,
@@ -32,12 +32,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    /*
     new MiniCssExtractPlugin({
       filename: "styles.css",
       chunkFilename: "[id].css",
     }),
-    */
     new HtmlWebpackPlugin({
       inject: true,
       minify: {
