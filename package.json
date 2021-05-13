@@ -32,7 +32,7 @@
   },
   "scripts": {
     "test": "jest --coverage --collectCoverageFrom='src/**/{!(app.js),}.js'",
-    "dev": "webpack-dev-server --mode development --open",
+    "dev": "webpack serve --mode development --open",
     "build": "webpack --mode production"
   },
   "repository": {
