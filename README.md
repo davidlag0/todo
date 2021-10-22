@@ -22,3 +22,5 @@ Install npm modules
 Build
 * `npm run build`
 
+### Deployment to Netlify
+* Set environment variable `NPM_VERSION` to `8.1.1`
