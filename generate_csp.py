@@ -23,11 +23,12 @@ if __name__ == '__main__':
     ARGS = PARSER.parse_args()
 
     # Parse JavaScript code first.
-    with open(ARGS.js, 'r') as js_file:
+    with open(ARGS.js, 'r', encoding='utf8') as js_file:
         js_code = js_file.read()
         style_pattern = re.compile(r'\<style\>(.*?)\<\/style\>')
         style_blocks = style_pattern.findall(js_code)
 
+        # pylint: disable=invalid-name
         output_csp = ''
 
         for block in style_blocks:
@@ -39,7 +40,8 @@ if __name__ == '__main__':
         logging.debug('Output CSP:%s', output_csp)
 
     # Use the base Netlify configuration to build the new one.
-    with open(ARGS.netlify, 'r') as netlify_base_file, open(ARGS.output, 'w') as output_file:
+    with open(ARGS.netlify, 'r', encoding='utf8') as netlify_base_file,\
+            open(ARGS.output, 'w', encoding='utf8') as output_file:
         csp_pattern = re.compile(r'style-src\s\'self\'(.*?)\;\sreport-uri')
 
         output = netlify_base_file.read()
