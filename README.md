@@ -18,3 +18,7 @@ Install node
 
 Install npm modules
 * `npm install --production`
+
+Build
+* `npm run build`
+
