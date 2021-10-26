@@ -30,12 +30,14 @@
     "imagemin-webp": "^6.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "jest": "^27.1.0",
+    "prettier": "^2.4.1",
     "script-loader": "^0.7.2",
     "style-loader": "^3.2.1",
     "terser-webpack-plugin": "^5.1.2",
     "webpack-dev-server": "^4.1.0"
   },
   "scripts": {
+    "format": "prettier --write 'src/**/*.js'",
     "lint": "eslint src --ext .js",
     "test": "jest --coverage --collectCoverageFrom='src/**/{!(app.js),}.js'",
     "dev": "webpack serve --mode development --open",
