@@ -21,3 +21,7 @@ Install npm modules
 
 Build
 * `npm run build`
+
+### Deployment
+* Set environment variable `NODE_ENV` to `production` to speed up initial build with no cache
+
